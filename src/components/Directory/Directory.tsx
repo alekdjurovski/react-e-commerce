@@ -1,6 +1,7 @@
 import React from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import "./Directory.scss";
+import { ICategories } from "../../shared/models/categories";
 
 // const Directory = () => {
 //     return(
@@ -56,7 +57,7 @@ class Directory extends React.Component<{}, { sections: any }> {
   render() {
     return (
       <div className="dir-menu">    
-      {this.state.sections.map((item: any) => <MenuItem key={item.id} item={item} ></MenuItem>)
+      {this.state.sections.map(({title, imageUrl, id, size, linkUrl}: ICategories) => <MenuItem id={id} title={title} imageUrl={imageUrl} size={size} linkUrl={linkUrl}></MenuItem>)
     }
       </div>
     );
